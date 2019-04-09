@@ -22,9 +22,13 @@ let students = [
 // Name: Nikki, Cohort: June
 // Name: Boris, Cohort: June
 
+for (var student of students){
+    console.log('Name: ' + student.name + ', Cohort: ' + student.cohort);
+}
+
 // 2. Write a function that accepts an object of users divided into 
 //    employees and managers, and display the number of characters per 
-//    employee/manager's name, as shown below, and logs the information 
+//    employee/manager's name, as shown below, and log the information 
 //    to the console.
 
 let users = {
@@ -39,7 +43,6 @@ let users = {
        {'first_name' : 'Gordon', 'last_name' : 'Poe'}
     ]
  };
-
         //Your console should look like the following:
 //  EMPLOYEES
 // 1 - JONES, MIGUEL - 11
@@ -49,3 +52,14 @@ let users = {
 // MANAGERS
 // 1 - CHAMBERS, LILLIAN - 15
 // 2 - POE, GORDON - 9
+
+for (var user in users){
+    console.log(user.toUpperCase());
+    for(i=0; i<users[user].length; i++){
+        num = i+ 1;
+        fName = users[user][i].first_name;
+        lName = users[user][i].last_name;
+        length = fName.length +lName.length;
+        console.log(num +' - ' + lName + ', ' + fName + ' - ' + length);
+    }
+}
