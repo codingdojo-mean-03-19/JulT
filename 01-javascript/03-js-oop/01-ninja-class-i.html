@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Class I Assignment</title>
+</head>
+
+<body>
+    <script>
+        function Ninja(name) {
+            this.name = name;
+            this.health = 100;
+            this.strength = 3;
+            this.speed = 3;
+
+            this.getSpeet = function () {
+                return speed;
+            };
+
+            this.getStrength = function () {
+                return strength;
+            };
+
+        }
+
+        Ninja.prototype.sayName = function () {
+            console.log("Hi, my name is " + this.name);
+            return this;
+        };
+
+        Ninja.prototype.showStats = function () {
+            console.log("Name: " + this.name + ", Health:" + this.health + ", Strength: " + this.getStrength() + ", Speed: " + this.getSpeed())
+            return this;
+        };
+
+        Ninja.prototype.drinkSake = function () {
+            this.health += 10;
+            return this;
+        };
+
+        Ninja.prototype.punch = function (attacked_ninja) {
+            if (this instanceof Ninja) {
+                attacked_ninja.health -= 5;
+                console.log(
+                    `${attacked_ninja.name} was punched by ${this.constructor.name} ${this.name} and lost 5 health`
+                )
+            } else {
+                console.log("Sorry, you can only punch if you are a Ninja (instance of Ninja class)")
+            }
+            return this;
+        }
+
+        const ninja1 = new Ninja("JulT");
+        ninja.sayName();
+        ninja1.showStats();
+        ninja1.drinkSake();
+
+
+    </script>
+</body>
+
+</html>
